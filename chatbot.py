@@ -1,8 +1,13 @@
 import streamlit as st
 import google.generativeai as genai
+st.set_page_config(
+    page_title = 'Chatbot',
+    page_icon = '?',
+    layout = 'centered',
+)
 
-st.header("Please enter the question that you want to ask?")
-question = st.text_input("Enter the question?")
+st.header("🤖 Get Answers")
+question = st.text_input("Ask Me")
 genai.configure(api_key = 'AIzaSyBHCCtq4qtkzRuyjZaKJL9UT_5_G3c3rDU')
 model = genai.GenerativeModel("gemini-1.5-flash")
 if question:
